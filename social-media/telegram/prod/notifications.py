@@ -56,7 +56,7 @@ async def server_status_periodic():
     while True:
         try:
             for i in range(SERVER_COUNT):  # type: ignore
-                host = os.getenv(f'ID_SERVER_TAILSCALE-{i}')
+                host = os.getenv(f'ID_SERVER_VPN-{i}')
                 try: 
                     proc = await asyncio.create_subprocess_exec(
                         "ping", "-c", "3", "-W", "2", host,
